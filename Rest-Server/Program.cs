@@ -18,6 +18,7 @@ app.MapGet("/orb", GetAlso);
 app.MapGet("/micke", GetMicke);
 app.MapGet("/maxi", GetMaxi);
 app.MapGet("/teachers/{n}", GetTeachers);
+app.MapPost("/add", AddTeacher);
 
 app.Run();
 
@@ -45,4 +46,9 @@ static string GetAlso(){
 
 static string GetMe(){
     return "Hello, World";
+}
+
+void AddTeacher(Teacher teach){
+    teachers.Add(teach);
+    Console.WriteLine("Teacher "+teach.Name+" was added");
 }
